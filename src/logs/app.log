@@ -1,0 +1,2 @@
+{"level":"info","message":"POST /api/users","timestamp":"2024-02-07T10:28:11.472Z"}
+{"level":"error","message":"User validation failed: username: Path `username` is required.","timestamp":"2024-02-07T10:28:11.541Z"}

@@ -1,3 +1,5 @@
+import {logger} from "../helpers/winstonLogger";
+
 interface ApiResponse<T> {
     success: boolean;
     message?: string;
@@ -14,6 +16,7 @@ export const createSuccessResponse = <T>(data: T, message?: string): ApiResponse
 };
 
 export const createErrorResponse = (error: string | undefined, message?: string): ApiResponse<undefined> => {
+    logger.error((message || 'Request failed') || (error ? error : 'Error'));
     return {
         success: false,
         message: message || 'Request failed',

@@ -6,12 +6,19 @@ import helmet from 'helmet'
 import compression from 'compression'
 import morgan from 'morgan';
 
+import {logger} from "./helpers/winstonLogger";
+
 dotenv.config();
 
 const app: Application = express();
 const port = process.env.PORT || 3000;
 
 // @todo middlewares
+
+app.use((req, res, next) => {
+    logger.info(`${req.method} ${req.url}`);
+    next();
+})
 app.use(morgan('dev'));
 
 app.use(bodyParser.urlencoded({extended: false}))
