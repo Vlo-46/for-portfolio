@@ -2,6 +2,7 @@ import {NextFunction, Request, Response} from 'express';
 import UserService from '../services/UserService';
 import {CreateUserDTO} from "../dto/UserDTO";
 import {createErrorResponse, createSuccessResponse} from "../utils/responseUtils";
+import redisClient from "../helpers/redisClient";
 
 export default class UserController {
     private userService: UserService;
@@ -24,6 +25,9 @@ export default class UserController {
     async getAllUsers(req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
             const users = await this.userService.getAllUsers();
+
+            await redisClient.set(`user:users`, JSON.stringify(users), 'EX', 3600);
+
             res.status(200).json(createSuccessResponse({users}));
         } catch (error: any) {
             next(error)
@@ -38,6 +42,8 @@ export default class UserController {
                 res.status(404).json(createErrorResponse(undefined, "User not found"));
                 return;
             }
+            await redisClient.set(`user:${userId}`, JSON.stringify(user), 'EX', 3600);
+
             res.status(200).json(createSuccessResponse({user}));
         } catch (error: any) {
             next(error)
