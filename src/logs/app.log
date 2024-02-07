@@ -1,2 +1,24 @@
 {"level":"info","message":"POST /api/users","timestamp":"2024-02-07T10:28:11.472Z"}
 {"level":"error","message":"User validation failed: username: Path `username` is required.","timestamp":"2024-02-07T10:28:11.541Z"}
+{"level":"info","message":"POST /api/auth/singin","timestamp":"2024-02-07T11:02:01.340Z"}
+{"level":"info","message":"POST /api/auth/signin","timestamp":"2024-02-07T11:02:24.024Z"}
+{"level":"info","message":"POST /api/auth/change-password","timestamp":"2024-02-07T11:02:55.916Z"}
+{"level":"error","message":"Invalid password","timestamp":"2024-02-07T11:02:56.127Z"}
+{"level":"info","message":"POST /api/auth/change-password","timestamp":"2024-02-07T11:03:02.920Z"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'replace')","timestamp":"2024-02-07T11:03:02.921Z"}
+{"level":"info","message":"POST /api/auth/change-password","timestamp":"2024-02-07T11:03:06.012Z"}
+{"level":"error","message":"Invalid password","timestamp":"2024-02-07T11:03:06.223Z"}
+{"level":"info","message":"POST /api/auth/change-password","timestamp":"2024-02-07T11:03:20.459Z"}
+{"level":"info","message":"POST /api/auth/change-password","timestamp":"2024-02-07T11:03:30.292Z"}
+{"level":"info","message":"POST /api/auth/singup","timestamp":"2024-02-07T11:29:47.189Z"}
+{"level":"info","message":"POST /api/auth/signup","timestamp":"2024-02-07T11:29:59.358Z"}
+{"level":"info","message":"POST /api/auth/forgot-password","timestamp":"2024-02-07T11:30:34.435Z"}
+{"level":"error","message":"User not found","timestamp":"2024-02-07T11:30:34.594Z"}
+{"level":"info","message":"POST /api/auth/forgot-password","timestamp":"2024-02-07T11:30:38.092Z"}
+{"level":"error","message":"length is not defined","timestamp":"2024-02-07T11:30:38.251Z"}
+{"level":"info","message":"POST /api/auth/forgot-password","timestamp":"2024-02-07T11:31:23.681Z"}
+{"level":"error","message":"Forbidden","timestamp":"2024-02-07T11:31:24.892Z"}
+{"level":"info","message":"POST /api/auth/forgot-password","timestamp":"2024-02-07T11:32:11.951Z"}
+{"level":"error","message":"Forbidden","timestamp":"2024-02-07T11:32:12.886Z"}
+{"level":"info","message":"POST /api/auth/forgot-password","timestamp":"2024-02-07T11:33:34.002Z"}
+{"level":"error","message":"Forbidden","timestamp":"2024-02-07T11:33:35.029Z"}

@@ -14,3 +14,12 @@ export interface AuthUserDTO {
     email: string;
     password: string;
 }
+
+export interface ChangeUserPasswordDTO {
+    oldPassword: string
+    newPassword: string
+}
+
+export interface ForgotUserPasswordDTO {
+    email: string
+}

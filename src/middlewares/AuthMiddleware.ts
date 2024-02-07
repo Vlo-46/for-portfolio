@@ -1,6 +1,7 @@
 import {Request, Response, NextFunction} from "express";
 import {DeepPartial} from 'utility-types';
 import {verifyToken} from "../helpers/jwt";
+import {createErrorResponse} from "../utils/responseUtils";
 
 export interface AuthenticatedRequest extends DeepPartial<Request> {
     user?: {
@@ -15,17 +16,18 @@ export const authMiddleware = (req: AuthenticatedRequest, res: Response, next: N
     try {
         const token = (req.headers?.authorization as string).replace('Bearer ', '')
         if (!token) {
-            return res.status(401).json({message: 'Unauthorized - Missing token'});
+            res.status(401).json(createErrorResponse(undefined, "Unauthorized - Missing token"));
+            return
         }
 
         const decoded: any = verifyToken(token);
         if (typeof decoded === 'string') {
-            return res.status(401).json({message: 'Unauthorized - Invalid token'});
+            res.status(401).json(createErrorResponse(undefined, "Unauthorized - Invalid token"));
         }
 
         req.user = decoded;
         next();
     } catch (error) {
-        res.status(401).send({error: 'Authorization failed'});
+        next(error)
     }
 }
