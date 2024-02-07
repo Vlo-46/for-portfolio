@@ -25,10 +25,12 @@ app.use(compression());
 // @todo routes
 import userRoute from './routes/UserRoute'
 import authRoute from './routes/AuthRoute'
+import {ErrorHandler} from "./middlewares/ErrorHandler";
 
 app.use('/api/users', userRoute)
 app.use('/api/auth', authRoute)
 
+app.use(ErrorHandler)
 
 // @todo database connection
 import {connectToDatabase} from './server';

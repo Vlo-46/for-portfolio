@@ -12,7 +12,7 @@ class AuthService {
 
     async signIn({ email, password }: AuthUserDTO): Promise<string | null> {
         try {
-            const user = await this.userService.getUserBy('email', email);;
+            const user = await this.userService.getUserBy('email', email);
 
             if (!user || !(await comparePasswords(password, user.password))) {
                 return null;
