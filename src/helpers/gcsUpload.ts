@@ -8,6 +8,7 @@ export const uploadImageToGCS = async function uploadImageToGCS(imageFile: any):
     const bucketName = 'bucket-for-portfolio';
     const fileName = `${Date.now()}-${imageFile.originalname}`;
 
+    //
     // const options: UploadOptions = {
     //     destination: fileName,
     //     metadata: {
