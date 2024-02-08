@@ -26,7 +26,9 @@ export default class UserController {
         try {
             const users = await this.userService.getAllUsers();
 
-            await redisClient.set(`user:users`, JSON.stringify(users), 'EX', 3600);
+            if (redisClient) {
+                await redisClient.set(`user:users`, JSON.stringify(users), 'EX', 3600);
+            }
 
             res.status(200).json(createSuccessResponse({users}));
         } catch (error: any) {
@@ -42,7 +44,10 @@ export default class UserController {
                 res.status(404).json(createErrorResponse(undefined, "User not found"));
                 return;
             }
-            await redisClient.set(`user:${userId}`, JSON.stringify(user), 'EX', 3600);
+
+            if (redisClient) {
+                await redisClient.set(`user:${userId}`, JSON.stringify(user), 'EX', 3600);
+            }
 
             res.status(200).json(createSuccessResponse({user}));
         } catch (error: any) {

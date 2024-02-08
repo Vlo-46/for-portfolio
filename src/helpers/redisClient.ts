@@ -1,16 +1,22 @@
 import Redis from 'ioredis';
 
-const redisClient = new Redis({
-    host: 'localhost',
-    port: 6379,
-});
+let redisClient: Redis | null = null;
 
-redisClient.on('connect', () => {
-    console.log('Connected to Redis server');
-});
+const isRedisEnabled = process.platform !== 'win32' && process.env.REDIS_ENABLED === 'true';
 
-redisClient.on('error', (err) => {
-    console.error('Redis connection error:', err);
-});
+if (isRedisEnabled) {
+    redisClient = new Redis({
+        host: 'localhost',
+        port: 6379,
+    });
+
+    redisClient.on('connect', () => {
+        console.log('Connected to Redis server');
+    });
+
+    redisClient.on('error', (err: any) => {
+        console.error('Redis connection error:', err);
+    });
+}
 
 export default redisClient;

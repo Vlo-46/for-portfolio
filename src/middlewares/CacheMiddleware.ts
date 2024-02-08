@@ -5,6 +5,11 @@ import {createSuccessResponse} from "../utils/responseUtils";
 export const CacheUsersMiddleware = (req: Request, res: Response, next: NextFunction) => {
     const userId = req.params.id
 
+    if (!redisClient) {
+        next();
+        return;
+    }
+
     let key = ''
     if (userId) {
         key = `user:${userId}`

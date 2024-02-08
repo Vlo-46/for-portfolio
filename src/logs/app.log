@@ -22,3 +22,4 @@
 {"level":"error","message":"Forbidden","timestamp":"2024-02-07T11:32:12.886Z"}
 {"level":"info","message":"POST /api/auth/forgot-password","timestamp":"2024-02-07T11:33:34.002Z"}
 {"level":"error","message":"Forbidden","timestamp":"2024-02-07T11:33:35.029Z"}
+{"level":"info","message":"POST /api/users","timestamp":"2024-02-08T16:28:07.452Z"}
