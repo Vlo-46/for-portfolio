@@ -1,4 +1,3 @@
-import bcrypt from 'bcrypt'
 import UserModel, { UserDocument } from '../models/User';
 import { CreateUserDTO, UpdateUserDTO } from '../dto/UserDTO';
 import {hashPassword} from "../helpers/bcrypt";
@@ -11,22 +10,22 @@ export default class UserService {
     }
 
     async getAllUsers(): Promise<UserDocument[]> {
-        return await UserModel.find();
+        return UserModel.find();
     }
 
     async getUserById(userId: string): Promise<UserDocument | null> {
-        return await UserModel.findById(userId);
+        return UserModel.findById(userId);
     }
 
     async updateUser(userId: string, updatedUserDTO: UpdateUserDTO): Promise<UserDocument | null> {
-        return await UserModel.findByIdAndUpdate(userId, updatedUserDTO, { new: true });
+        return UserModel.findByIdAndUpdate(userId, updatedUserDTO, { new: true });
     }
 
     async deleteUser(userId: string): Promise<UserDocument | null> {
-        return await UserModel.findByIdAndDelete(userId);
+        return UserModel.findByIdAndDelete(userId);
     }
 
     async getUserBy(target: string, value: string): Promise<UserDocument | null> {
-        return await UserModel.findOne({[target]: value})
+        return UserModel.findOne({[target]: value})
     }
 }

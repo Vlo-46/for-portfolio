@@ -23,3 +23,20 @@
 {"level":"info","message":"POST /api/auth/forgot-password","timestamp":"2024-02-07T11:33:34.002Z"}
 {"level":"error","message":"Forbidden","timestamp":"2024-02-07T11:33:35.029Z"}
 {"level":"info","message":"POST /api/users","timestamp":"2024-02-08T16:28:07.452Z"}
+{"level":"info","message":"POST /api/auth/signin","timestamp":"2024-02-08T17:10:51.460Z"}
+{"level":"info","message":"POST /api/post","timestamp":"2024-02-08T17:12:36.655Z"}
+{"level":"info","message":"GET /api/post","timestamp":"2024-02-08T17:12:48.762Z"}
+{"level":"info","message":"GET /api/post","timestamp":"2024-02-08T17:13:21.897Z"}
+{"level":"error","message":"Cannot populate path `users` because it is not in your schema. Set the `strictPopulate` option to false to override.","timestamp":"2024-02-08T17:13:22.118Z"}
+{"level":"info","message":"GET /api/post","timestamp":"2024-02-08T17:13:43.358Z"}
+{"level":"error","message":"Cannot populate path `user` because it is not in your schema. Set the `strictPopulate` option to false to override.","timestamp":"2024-02-08T17:13:43.623Z"}
+{"level":"info","message":"GET /api/post","timestamp":"2024-02-08T17:23:32.452Z"}
+{"level":"info","message":"GET /api/post","timestamp":"2024-02-08T17:27:20.772Z"}
+{"level":"error","message":"Cannot do exclusion on field password in inclusion projection","timestamp":"2024-02-08T17:27:21.282Z"}
+{"level":"info","message":"GET /api/post","timestamp":"2024-02-08T17:27:59.844Z"}
+{"level":"info","message":"GET /api/post","timestamp":"2024-02-08T17:28:27.457Z"}
+{"level":"info","message":"GET /api/post","timestamp":"2024-02-08T17:29:15.167Z"}
+{"level":"info","message":"GET /api/post","timestamp":"2024-02-08T17:30:36.755Z"}
+{"level":"info","message":"GET /api/post/65c50b849b42045db2df0515","timestamp":"2024-02-08T17:31:40.334Z"}
+{"level":"info","message":"PUT /api/post/65c50b849b42045db2df0515","timestamp":"2024-02-08T17:33:08.175Z"}
+{"level":"info","message":"GET /api/post/","timestamp":"2024-02-08T17:34:15.681Z"}

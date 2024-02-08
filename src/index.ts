@@ -32,10 +32,12 @@ app.use(compression());
 // @todo routes
 import userRoute from './routes/UserRoute'
 import authRoute from './routes/AuthRoute'
+import postRoute from './routes/PostRoute'
 import {ErrorHandler} from "./middlewares/ErrorHandler";
 
 app.use('/api/users', userRoute)
 app.use('/api/auth', authRoute)
+app.use('/api/post', postRoute)
 
 app.use(ErrorHandler)
 
