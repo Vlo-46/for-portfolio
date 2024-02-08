@@ -1,6 +1,9 @@
 node_modules
 ./node_modules
 
+./gcs_data.json
+gcs_data.json
+
 .env
 ./.env
 

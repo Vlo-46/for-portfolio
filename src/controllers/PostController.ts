@@ -3,6 +3,7 @@ import {createErrorResponse, createSuccessResponse} from "../utils/responseUtils
 import {CreatePostDTO} from "../dto/PostDTO";
 import PostService from "../services/PostService";
 import {AuthenticatedRequest} from "../middlewares/AuthMiddleware";
+import { uploadImageToGCS } from '../helpers/gcsUpload';
 
 export default class PostController {
     private postService: PostService;
@@ -20,7 +21,18 @@ export default class PostController {
                 return
             }
 
-            const postDTO: CreatePostDTO = req.body;
+            let postDTO: CreatePostDTO = req.body;
+
+            if (postDTO.image) {
+                const imageFile = req.file;
+                if (!imageFile) {
+                    res.status(400).json(createErrorResponse(undefined, "Something went wrong uploading image"));
+                    return;
+                }
+
+                postDTO = {...postDTO, image: await uploadImageToGCS(imageFile)}
+            }
+
             const post = await this.postService.createPost(postDTO, userId);
 
             res.status(201).json(createSuccessResponse({post}));
