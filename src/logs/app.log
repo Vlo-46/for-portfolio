@@ -40,3 +40,19 @@
 {"level":"info","message":"GET /api/post/65c50b849b42045db2df0515","timestamp":"2024-02-08T17:31:40.334Z"}
 {"level":"info","message":"PUT /api/post/65c50b849b42045db2df0515","timestamp":"2024-02-08T17:33:08.175Z"}
 {"level":"info","message":"GET /api/post/","timestamp":"2024-02-08T17:34:15.681Z"}
+{"level":"info","message":"POST /api/post/","timestamp":"2024-02-09T18:16:24.957Z"}
+{"level":"error","message":"Unauthorized - Invalid token","timestamp":"2024-02-09T18:16:25.092Z"}
+{"level":"error","message":"Unauthorized","timestamp":"2024-02-09T18:16:25.095Z"}
+{"level":"error","message":"Cannot set headers after they are sent to the client","timestamp":"2024-02-09T18:16:25.096Z"}
+{"level":"info","message":"POST /api/auth/signin","timestamp":"2024-02-09T18:16:35.599Z"}
+{"level":"info","message":"POST /api/post/","timestamp":"2024-02-09T18:16:54.213Z"}
+{"level":"info","message":"POST /api/post/","timestamp":"2024-02-09T18:18:23.438Z"}
+{"level":"error","message":"Something went wrong uploading image","timestamp":"2024-02-09T18:18:23.454Z"}
+{"level":"info","message":"POST /api/post/","timestamp":"2024-02-09T18:19:08.315Z"}
+{"level":"error","message":"Post validation failed: content: Path `content` is required., title: Path `title` is required.","timestamp":"2024-02-09T18:19:08.339Z"}
+{"level":"info","message":"POST /api/post/","timestamp":"2024-02-09T18:19:25.016Z"}
+{"level":"error","message":"Something went wrong uploading image","timestamp":"2024-02-09T18:19:25.028Z"}
+{"level":"info","message":"POST /api/post/","timestamp":"2024-02-09T18:22:03.156Z"}
+{"level":"info","message":"POST /api/post/","timestamp":"2024-02-09T18:31:12.103Z"}
+{"level":"info","message":"POST /api/post/","timestamp":"2024-02-09T18:33:35.288Z"}
+{"level":"error","message":"Post validation failed: content: Path `content` is required., title: Path `title` is required.","timestamp":"2024-02-09T18:33:35.303Z"}

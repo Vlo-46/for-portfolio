@@ -11,3 +11,6 @@ gcs_data.json
 ./.idea
 
 src/logs/*.log
+
+src/uploads/*
+./src/uploads/*

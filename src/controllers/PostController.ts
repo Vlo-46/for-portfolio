@@ -24,13 +24,19 @@ export default class PostController {
             let postDTO: CreatePostDTO = req.body;
 
             if (postDTO.image) {
-                const imageFile = req.file;
+                const imageFile = (req as any).file;
                 if (!imageFile) {
                     res.status(400).json(createErrorResponse(undefined, "Something went wrong uploading image"));
                     return;
                 }
 
-                postDTO = {...postDTO, image: await uploadImageToGCS(imageFile)}
+                const uploadedImage = await uploadImageToGCS(imageFile)
+
+                if (!uploadedImage) {
+                    res.status(400).json(createErrorResponse(undefined, "Something went wrong uploading image"));
+                    return;
+                }
+                postDTO = {...postDTO, image: uploadedImage}
             }
 
             const post = await this.postService.createPost(postDTO, userId);
